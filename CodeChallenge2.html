@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Function CodeChallenge</title>
+    <style>
+        .container {
+            text-align: center;
+            box-shadow: -1px 1px 20px 2px rgba(0, 0, 0, 0.534);
+            border-radius: 10px;
+            width: 500px;
+            height: 40rem;
+            margin-left: 400px;
+            align-items: center;
+            padding: 10px;
+        }
+        h1{
+            margin-top: 30px;
+        }
+        button{
+            background-color: rgba(145, 0, 0, 0.76);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: large;
+        }
+        .wrapper {
+            background-color: crimson;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome to Car Washerist</h1>
+        <button id="DriveCar">Drive My Car</button>
+        <div class="wrapper">
+            <h2 id="Information">This is  the Information:</h2>
+            <h4 id="Name"></h4>
+            <h4 id="Age"></h4>
+            <h4 id="WorkEXP"></h4>
+        </div>
+        <button id="CarWash">Car Wash</button>
+        <div class="wrapper">
+            <h2 id="Information2">This is  the Information:</h2>
+            <h4 id="Name2"></h4>
+            <h4 id="Age2"></h4>
+            <h4 id="WorkEXP2"></h4>
+        </div>
+    </div>
+
+
+    <!-- Script File for the person -->
+    <script>
+        function Driver(name, age, workExperience) {
+            this.name = name;
+            this.age = age;
+            this.workExperience = workExperience;
+            this.driveMyCar = function(){
+                alert("Your Driver is " + this.name);
+                alert("His " + this.age + " yrs old");
+                alert("His work experience is " + this.workExperience)
+                document.getElementById("Name").innerText = "Name: " + this.name;
+                document.getElementById("Age").innerText = "Age: " + this.age;
+                document.getElementById("WorkEXP").innerText = "WorkEXP: " + this.workExperience;
+            }
+            this.carWash = function(){
+                alert("Your Driver is " + this.name);
+                alert("His " + this.age + " yrs old");
+                alert("His work experience is " + this.workExperience)
+                document.getElementById("Name2").innerText = "Name: " + this.name;
+                document.getElementById("Age2").innerText = "Age: " + this.age;
+                document.getElementById("WorkEXP2").innerText = "WorkEXP: " + this.workExperience;
+            }
+        }
+
+        const Toto = new Driver("Toto", 40 ,"Taxi Driver");
+        const Boy = new Driver("Boy", 50 ,"Bus Driver");
+
+        let myDriver = document.getElementById("DriveCar")
+        myDriver.addEventListener("click", function(){
+            Toto.driveMyCar();
+        });
+        let myWasher = document.getElementById("CarWash");
+        myWasher.addEventListener("click", function(){
+            Boy.carWash();
+        });
+    </script>
+</body>
+</html>
